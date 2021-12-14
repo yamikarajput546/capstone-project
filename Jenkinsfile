@@ -19,7 +19,9 @@ pipeline {
        }
        stage("test"){
            
-
+          when{
+             branch 'test'
+          }
        
 
          steps
@@ -30,6 +32,9 @@ pipeline {
    }
 
    stage("packaging"){
+      when{
+             branch 'prod'
+          }
            
          steps
             {
