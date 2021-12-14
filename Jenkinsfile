@@ -13,6 +13,7 @@ pipeline {
           when {
         branch 'dev'
             }
+ 
          steps
             {
                 sh 'mvn clean'
@@ -20,15 +21,25 @@ pipeline {
        }
        stage("test"){
            
+
          when {
         branch 'dev'
             }
+
          steps
             {
                 sh 'mvn clean test'
             }
 
    }
-  
+
+   stage("packaging"){
+           
+         steps
+            {
+                sh 'mvn package'
+            }
+       }
+
    }
 }
