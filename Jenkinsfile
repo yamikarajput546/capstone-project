@@ -32,7 +32,7 @@ pipeline {
    stage("packaging"){
            
          when {
-        branch 'myBranch'
+        branch 'dev'
             }
          steps
             {
