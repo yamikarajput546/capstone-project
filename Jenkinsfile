@@ -10,9 +10,7 @@ pipeline {
    stages{
        stage("clean"){
            
-          when {
-        branch 'dev'
-            }
+         
  
          steps
             {
@@ -21,10 +19,10 @@ pipeline {
        }
        stage("test"){
            
-
-         when {
-        branch 'dev'
-            }
+          when{
+             branch 'test'
+          }
+       
 
          steps
             {
@@ -34,6 +32,9 @@ pipeline {
    }
 
    stage("packaging"){
+      when{
+             branch 'prod'
+          }
            
          steps
             {
