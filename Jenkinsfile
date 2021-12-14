@@ -9,11 +9,14 @@ pipeline {
  //  }
    stages{
        stage("clean"){
-           
+         
+         when{
+             branch 'dev'
          steps
             {
                 sh 'mvn clean'
             }
+          }
        }
        stage("test"){
            
