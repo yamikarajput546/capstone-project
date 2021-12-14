@@ -23,12 +23,6 @@ pipeline {
             }
 
    }
-   stage("packaging"){
-           
-         steps
-            {
-                sh 'mvn package'
-            }
-       }
+  
    }
 }
