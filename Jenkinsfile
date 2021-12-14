@@ -10,19 +10,20 @@ pipeline {
    stages{
        stage("clean"){
          
-         when{
-             branch 'dev'
-         steps
-            {
-                sh 'mvn clean'
-            }
-          }
+              steps
+              {
+                 sh 'mvn clean'
+              }
+          
        }
        stage("test"){
            
+         when {
+        branch 'myBranch'
+            }
          steps
             {
-                sh 'mvn clean test'
+                sh 'mvn test'
             }
 
    }
